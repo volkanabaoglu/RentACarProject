@@ -9,6 +9,7 @@ namespace Console
         public void Main(string[] args)
         {
           
+
             
         }
     }
