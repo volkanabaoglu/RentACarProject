@@ -1,22 +1,23 @@
-﻿using Entities.Concrete;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class DBContext: Microsoft.EntityFrameworkCore.DbContext
+    public class DBContext:DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\ProjectModels;Database=RentACarDB;Trusted_Connection=True");
+            //@ koyduğumuzda kaçış dizisi yapmamıza gerek kalmaz \ ı string olarak algılar @ koymazsak \\ yapmamız gerekir.
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\ProjectModels;Database=RentACarDB;Trusted_Connection=true");
         }
         public DbSet<Car> Cars { get; set; }
-        public DbSet<Brand> Brands  { get; set; }
+        public DbSet<Brand> Brands { get; set; }
         public DbSet<Color> Colors { get; set; }
-
+        
     }
 }

@@ -7,7 +7,7 @@ namespace Console
 {
     public class Class1
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
             CarJoinTest();
 
@@ -16,7 +16,7 @@ namespace Console
         private static void CarJoinTest()
         {
             CarManger carManager = new CarManger(new EfCarDal());
-            
+
 
             foreach (var item in carManager.GetCarDetails())
             {
