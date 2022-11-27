@@ -9,19 +9,12 @@ namespace Console
     {
         public static void Main(string[] args)
         {
-            CarJoinTest();
+            
 
 
         }
-        private static void CarJoinTest()
-        {
-            CarManger carManager = new CarManger(new EfCarDal());
+      
 
-
-            foreach (var item in carManager.GetCarDetails())
-            {
-                System.Console.WriteLine(item.BrandName + "  " + item.ColorName + "  " + item.DailyPrice);
-            }
-        }
+        
     }
 }
