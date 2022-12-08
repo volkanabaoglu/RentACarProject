@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Results;
 
 
@@ -44,7 +46,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Car>(_carDal.Get(p => p.Id == id));
         }
-
+        [ValidationAspect(typeof(CarValidation))]
         public IResult Add(Car car)
         {
            
