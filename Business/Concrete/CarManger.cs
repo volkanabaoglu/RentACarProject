@@ -11,6 +11,8 @@ using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.Results;
+using Core.Utilities.Results;
+
 
 
 namespace Business.Concrete
@@ -20,7 +22,7 @@ namespace Business.Concrete
         ICarDal _carDal;
         public CarManger(ICarDal carDal)
         {
-            carDal = _carDal; 
+            _carDal = carDal;
         }
         
         public IDataResult<List<Car>> GetAll()

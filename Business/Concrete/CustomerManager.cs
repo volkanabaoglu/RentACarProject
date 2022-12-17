@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Constants;
 using Core.Results;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
@@ -17,7 +18,7 @@ namespace Business.Concrete
         ICustomerDal _customerDal;
         public CustomerManager(ICustomerDal customerDal)
         {
-            customerDal = _customerDal;
+            _customerDal = customerDal;
         }
 
         public IResult Add(Customer customer)
